@@ -8,7 +8,7 @@ using HarmonyLib;
 namespace LeaveMyRezAlone.Patches;
 
 [HarmonyPatch(typeof(UserInterface))]
-public class ExampleShoppingCartPatch {
+public class UserInterfacePatch {
     [HarmonyPatch(nameof(UserInterface.LateUpdate))]
     [HarmonyTranspiler]
     private static IEnumerable<CodeInstruction> RemoveResolutionOverwrite(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
