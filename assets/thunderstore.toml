@@ -1,0 +1,34 @@
+[config]
+schemaVersion = "0.0.1"
+
+[package]
+namespace = "www_Day_Dream"
+name = "LeaveMyRezAlone"
+description = "Prevents Content Warning from changing your screen resolution on Underground load."
+websiteUrl = "https://github.com/wwwDayDream/LeaveMyRezAlone"
+containsNsfwContent = false
+
+[package.dependencies]
+BepInEx-BepInExPack = "5.4.2100"
+CommanderCat101-ContentSettings = "1.0.1"
+
+[build]
+icon = "icon.png"
+readme = "README.TS.md"
+outdir = "../dist"
+
+[[build.copy]]
+source = "../LICENSE"
+target = "/"
+
+[[build.copy]]
+source = "../LeaveMyRezAlone/bin/Release/netstandard2.1/LeaveMyRezAlone.dll"
+target = "/BepInEx/plugins/LeaveMyRezAlone/"
+
+[publish]
+communities = [ "content-warning" ]
+repository = "https://thunderstore.io"
+
+# "bepinex", "clientside", "fix"
+[publish.categories]
+content-warning = [ "mods", "misc" ] 
